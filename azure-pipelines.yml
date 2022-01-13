@@ -1,10 +1,15 @@
 # 注意!!!!打包上線流程用，不要修改/刪除這個文件!!!!!
 
 trigger:
-- master
-- instance-01
-- instance-02
-- instance-03
+  branches:
+    include:
+    - master
+    - instance-01
+    - instance-02
+    - instance-03
+  paths:
+    exclude:
+    - azure-pipelines.yml
 
 resources:
   repositories:
