@@ -9,7 +9,7 @@ trigger:
     - instance-03
   paths:
     exclude:
-    - azure-pipelines.yml
+    - azure-pipelines.yml #test exclude
 
 resources:
   repositories:
