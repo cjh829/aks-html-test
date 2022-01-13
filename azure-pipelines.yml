@@ -1,0 +1,12 @@
+# 注意!!!!上線流程用，不要刪除/修改這個文件!!!!!
+# 因為Azure pipeline不支持github在resource的trigger，所以要開這個，去觸發實際的打包任務
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo got new commit from master
+  displayName: 'just a trigger'
