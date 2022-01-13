@@ -8,5 +8,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- checkout: none # disable checkout due to this is just a trigger-proxy
 - script: echo got new commit from master
   displayName: 'just a trigger'
