@@ -41,7 +41,7 @@ steps:
     repository: 'aks-nginx-test'
     dockerfile: 'aks-nginx-test/Dockerfile'
     tags: |
-      '$(branch).$(commit)'
+      $(branch).$(commit)
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: 'aks-nginx-test/k8s.yaml'
