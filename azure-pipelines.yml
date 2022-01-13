@@ -55,8 +55,3 @@ steps:
     dockerfile: 'aks-nginx-test/Dockerfile'
     tags: |
       $(branch).$(commitHash)
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: 'aks-nginx-test/k8s.yaml'
-    artifact: 'manifests.$(branch).$(commitHash)'
-    publishLocation: 'pipeline'
