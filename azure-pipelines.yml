@@ -15,7 +15,7 @@ resources:
   repositories:
   - repository: nginxsrc
     type: github
-    endpoint: cjh829
+    endpoint: github_cjh829
     name: cjh829/aks-nginx-test
     ref: master
 
