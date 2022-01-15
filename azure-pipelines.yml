@@ -21,7 +21,7 @@ resources:
 
 variables:
   branch: '$(Build.SourceBranchName)'
-  commit: '$(Build.SourceVersion)'
+  buildnumber: '$(Build.BuildNumber)'
 
 stages:
 - stage: PackAndPush
@@ -60,4 +60,4 @@ stages:
         repository: 'aks-nginx-test'
         dockerfile: 'aks-nginx-test/Dockerfile'
         tags: |
-          $(branch).$(commitHash)
+          $(branch).$(commitHash).$(buildnumber)
