@@ -9,7 +9,7 @@ trigger:
     - instance-03
   paths:
     exclude:
-    - azure-pipelines.yml #test exclude
+    - azure-pipelines.yml
 
 resources:
   repositories:
@@ -21,7 +21,7 @@ resources:
 
 variables:
   branch: '$(Build.SourceBranchName)'
-  buildnumber: '$(Build.BuildNumber)'
+  buildNumber: '$(Build.BuildNumber)'
 
 stages:
 - stage: PackAndPush
@@ -60,4 +60,4 @@ stages:
         repository: 'aks-nginx-test'
         dockerfile: 'aks-nginx-test/Dockerfile'
         tags: |
-          $(branch).$(commitHash).$(buildnumber)
+          $(branch).$(commitHash).$(buildNumber)
