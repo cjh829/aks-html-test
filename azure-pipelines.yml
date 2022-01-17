@@ -52,6 +52,14 @@ stages:
       env: { sourceVersion: $(Build.SourceVersion) }
       displayName: Git Hash 8-digit
       workingDirectory: $(Build.SourcesDirectory)
+    - task: Bash@3
+      displayName: 'Generate version-info file'
+      inputs:
+        targetType: 'inline'
+        script: |
+          echo "*** Tag: $(branch).$(commitHash).$(buildNumber) ***" >> aks-nginx-test/nginx/html/version.txt
+          echo "*** Time: $(date -u) ***" >> aks-nginx-test/nginx/html/version.txt
+        workingDirectory: '$(Build.SourcesDirectory)'
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
