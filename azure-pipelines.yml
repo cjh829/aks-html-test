@@ -15,7 +15,7 @@ resources:
   repositories:
   - repository: nginxsrc
     type: github
-    endpoint: github_cjh829
+    endpoint: F1P5FEDevGitHub
     name: cjh829/aks-nginx-test
     ref: master
 
@@ -64,7 +64,7 @@ stages:
       displayName: Build and push an image to container registry
       inputs:
         command: buildAndPush
-        containerRegistry: 'myacr'
+        containerRegistry: 'F1P5FEDevACR'
         repository: 'aks-nginx-test'
         dockerfile: 'aks-nginx-test/Dockerfile'
         tags: |
